@@ -1,0 +1,16 @@
+<h2> Payment Information</h2>
+<div id="payment-info">
+    <form (ngSubmit)="onSubmit(paymentForm)" #paymentForm="ngForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required ngModel><br>
+      <label for="zipcode">Zipcode</label>
+      <input type="text" id="zipcode" name="zipcode"  required ngModel> <br>
+      <label for="ccNumber">Credit Card Number</label>
+      <input type="text" id="ccNumber" name="ccNumber"  required ngModel><br>
+      <label for="ccSecCode">CC Security Code</label>
+      <input type="text" id="ccSecCode" name="ccSecCode" required ngModel><br>
+      <button class="button-primary" type="submit" [disabled]="!paymentForm.valid">Place Order</button>
+    </form>
+    <p *ngIf="!paymentForm.valid && paymentForm.touched">All fields required.</p>
+</div>
+

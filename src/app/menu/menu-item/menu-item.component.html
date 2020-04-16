@@ -1,0 +1,34 @@
+<div class="row">
+  <form #itemForm="ngForm" >
+    <table>
+      <tr>
+        <td><span style="color:#6551b5">{{ item.id }}.</span> {{item.name}}</td>
+        <td>{{ item.price|currency }}</td>
+        <td>
+          <input
+            name="qty"
+            type="number"
+            maxlength="2"
+            min="0"
+            max="24"
+            required
+            [ngModel]="0"
+            #qty>
+        </td>
+        <td>
+          <button
+            name="addToCart"
+            class="button-primary"
+            style="float: right;"
+            type="submit"
+            [disabled]="qty.value == 0"
+            (click)="addToCart(item, qty.value)">
+            Add to Cart
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+

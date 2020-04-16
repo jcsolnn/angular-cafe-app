@@ -1,0 +1,18 @@
+<h1 style="text-align: center"><a routerLink="/menu">Café & Bakery</a></h1>
+<div class="topnav">
+  <!-- <a routerLink="/menu">Menu</a> -->
+  <div class="dropdown" appDropdown>
+    <button class="drop-btn">Menu</button>
+    <div class="dropdown-content" >
+     <a *ngFor="let category of categories"
+          routerLink="/menu/category/{{category.id}}">
+          {{category.name}}
+      </a>
+    </div>
+  </div>
+  <button class="drop-btn"
+          routerLink="/cart"
+          style="float:right">
+          Cart
+  </button>
+</div>

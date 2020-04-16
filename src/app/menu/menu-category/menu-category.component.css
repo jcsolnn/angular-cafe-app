@@ -1,0 +1,47 @@
+/* table{
+  border-collapse: collapse;
+}
+tr{
+  border-bottom: 1px solid #c67575;
+}
+td{
+  padding: 5px 10px;
+}
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+} */
+
+.button-incr, .button-decr{
+  display: inline-block;
+  color: #fff4e9;
+  padding: 5px;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.button-incr{
+  background-color: #6551b5;
+}
+.button-incr:hover{
+  background-color: rgb(117,75,107);
+
+}
+.button-decr{
+  background-color: #c67575;
+}
+.button-decr:hover{
+  background-color: rgb(147,99,94);
+}
+
+
+
+/*
+tr:nth-child(even){
+  background-color: #f4d3b2;
+}
+*/

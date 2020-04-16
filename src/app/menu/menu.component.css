@@ -1,0 +1,36 @@
+h2{
+  color: #f4d3b2;
+}
+.card{
+  box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.5);
+  background-color: #6551b5;
+  margin-top: 20px;
+  margin-bottom: 0;
+  width: 100%;
+  position: relative;
+}
+.card .text{
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  color: #f4d3b2;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+.card img{
+  vertical-align: middle;
+  width: 100%;
+}
+
+.card:hover img{
+  opacity: 0.5;
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{
+  cursor: pointer;
+}
+

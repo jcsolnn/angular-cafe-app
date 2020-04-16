@@ -1,0 +1,10 @@
+<h2>Cart</h2>
+<!-- <p *ngIf="order.quantity == 0; else elseBlock"> -->
+<p *ngIf="cartItems.length < 1; else elseBlock">
+  You have 0 items in your cart.
+</p>
+<ng-template #elseBlock>
+   <!--  <p>You have {{ order.quantity }} item(s) in your cart.</p> -->
+  <p>You have <span style="color:#6551b5; font-size: larger;">{{ cartItems.length }}</span> item(s) in your cart.</p>
+  <app-cart-item *ngFor="let item of cartItems" [item]="item"></app-cart-item>
+</ng-template>

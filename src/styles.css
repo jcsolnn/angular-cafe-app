@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  box-sizing: border-box;
+}
+body{
+  background: #fff4e9;
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px;
+}
+h1, h2{
+  color: #9c51b6;
+}
+
+
+.content{
+  margin: 20px auto;
+  width: 75%;
+}
+
+.row:after{
+  display: table;
+  clear: both;
+}
+[class*="button-"]{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px;
+  margin: 10px;
+  outline: none;
+
+}
+
+.button-primary{
+  background-color:  #9c51b6;
+  color: #fff4e9;
+}
+.button-primary:hover{
+  background-color: #6551b5;
+}
+.button-primary:disabled{
+  cursor: default;
+  background-color: #a878b8 ;
+  color: #fff4e9;
+}
+

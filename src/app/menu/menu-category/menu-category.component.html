@@ -1,0 +1,5 @@
+<div *ngIf="category; else errorblock">
+  <h2>{{ category.name | uppercase }}</h2>
+    <app-menu-item *ngFor="let item of items" [item] = item></app-menu-item>
+</div>
+<ng-template #errorblock><p>Something went wrong</p></ng-template>
