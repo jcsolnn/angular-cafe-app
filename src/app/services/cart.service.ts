@@ -7,7 +7,6 @@ import { Order } from '../models/order.model';
   providedIn: 'root'
 })
 export class CartService {
-
   //order: Order = new Order(0,0);
   // to store the array of current products in the cart (no handled by order)
   cartItems: OrderItem[] = [];

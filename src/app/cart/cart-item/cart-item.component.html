@@ -1,15 +1,27 @@
-  <table>
-    <!-- <tr *ngFor="let item of order.items"> -->
-    <tr>
-      <td><span style="color: #6551b5">{{ item.id }}.</span> {{ item.name }}</td>
-      <td>{{ item.unitPrice | currency }}</td>
-      <td>x {{ item.quantity }}</td>
-      <td>{{ item.totalPrice | currency }}</td>
-      <!-- <td><button (click)="onRemoveItem(item.id)">Remove</button></td> -->
-      <td><a>Edit</a></td>
-      <td><a>Remove</a></td>
-    </tr>
-<!--     <tr>
+<table>
+  <!-- <tr *ngFor="let item of order.items"> -->
+  <tr>
+    <td>
+      <span style="color: #6551b5;">{{ item.id }}.</span> {{ item.name }}
+    </td>
+    <td>{{ item.unitPrice | currency }}</td>
+    <td>
+      <input name="quantity"
+               type="number"
+               maxlength="1"
+               min="1"
+               max="24"
+               readonly
+               ngModel={{item.quantity}}>
+    </td>
+    <td>{{ item.totalPrice | currency }}</td>
+    <!-- <td><button (click)="onRemoveItem(item.id)">Remove</button></td> -->
+    <td>
+      <button class="button-edit">Edit</button>
+      <button class="button-remove">Remove</button>
+    </td>
+  </tr>
+  <!--     <tr>
       <td></td>
       <td></td>
       <td>Tax:</td>
@@ -21,6 +33,6 @@
       <td>Total Amount:</td>
       <td>{{ order.totalPrice | currency }}</td>
     </tr> -->
-  </table>
+</table>
 <!--   <button class="button-clear" (click)="onClearCart()">Clear Cart</button>
   <button class="button-primary">Place Order</button> -->

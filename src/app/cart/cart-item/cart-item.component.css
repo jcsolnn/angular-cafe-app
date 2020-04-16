@@ -9,3 +9,25 @@ tr{
 td{
   padding: 5px 10px;
 }
+
+.button-edit{
+  background-color: inherit;
+  color: blue;
+  font-size: small;
+}
+.button-edit:hover, .button-remove:hover{
+  color:black;
+}
+.button-remove{
+  background-color: inherit;
+  color: red;
+  font-size: small;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+}
