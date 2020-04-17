@@ -1,4 +1,13 @@
 
+h2{
+  color: #6a51b6;
+}
+
+em{
+  color:#C67575;
+  font-size:larger;
+  font-weight: bold;
+}
 .button-clear{
  background-color: #f4d3b2;
  color: #c67575;

@@ -1,38 +1,39 @@
-<table>
-  <!-- <tr *ngFor="let item of order.items"> -->
-  <tr>
-    <td>
-      <span style="color: #6551b5;">{{ item.id }}.</span> {{ item.name }}
-    </td>
-    <td>{{ item.unitPrice | currency }}</td>
-    <td>
-      <input name="quantity"
-               type="number"
-               maxlength="1"
-               min="1"
-               max="24"
-               readonly
-               ngModel={{item.quantity}}>
-    </td>
-    <td>{{ item.totalPrice | currency }}</td>
-    <!-- <td><button (click)="onRemoveItem(item.id)">Remove</button></td> -->
-    <td>
-      <button class="button-edit">Edit</button>
-      <button class="button-remove">Remove</button>
-    </td>
-  </tr>
-  <!--     <tr>
-      <td></td>
-      <td></td>
-      <td>Tax:</td>
-      <td>{{ order.tax | currency }}</td>
+<form (ngSubmit)="onSubmit(itemForm)" #itemForm="ngForm">
+  <table>
+    <!-- <tr *ngFor="let cartItem.item of order.items"> -->
+    <tr>
+      <td>
+        <label>{{ cartItem.id }}.</label>
+        {{ cartItem.name }}
+      </td>
+      <td>{{ cartItem.unitPrice | currency }}</td>
+      <td>
+        <input
+          name="quantity"
+          type="number"
+          maxlength="1"
+          min="1"
+          max="24"
+          disabled
+          [ngModel]="cartItem.quantity"
+        />
+      </td>
+      <td>{{ cartItem.subtotal | currency }}</td>
+      <td>
+        <!-- <button class="button-edit">Edit</button> -->
+        <button class="button-edit" type="submit">
+          {{ editMode ? "Update" : "Edit" }}
+        </button>
+        <button class="button-remove" (click)="onRemoveItem()">Remove</button>
+      </td>
     </tr>
-    <tr style="border-bottom: none;">
-      <td></td>
-      <td></td>
-      <td>Total Amount:</td>
-      <td>{{ order.totalPrice | currency }}</td>
-    </tr> -->
-</table>
-<!--   <button class="button-clear" (click)="onClearCart()">Clear Cart</button>
-  <button class="button-primary">Place Order</button> -->
+
+  </table>
+
+</form>
+<!-- ngModel="{{cartItem.quantity}} works the same as
+    [ngModel]="cartItem.quantity"
+
+    <input #qt required pattern="^[0-9]+[0-9]*$">
+    <button disabled="!qty.valid" or qty.value.invalid or!qty.value.valid
+-->
