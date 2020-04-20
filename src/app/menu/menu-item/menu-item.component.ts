@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { MenuItem } from 'src/app/models/menu-item.model';
-import { CartService } from 'src/app/services/cart.service';
+import { Component, OnInit, Input, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { MenuItem } from "src/app/models/menu-item.model";
+import { CartService } from "src/app/services/cart.service";
 
 @Component({
   selector: "app-menu-item",
@@ -10,24 +10,23 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class MenuItemComponent implements OnInit {
   @Input() item: MenuItem;
-  @ViewChild("itemForm", { static: false }) itemForm: NgForm;
+  //@ViewChild("menuItemForm", { static: false }) form: NgForm;
   constructor(private cartService: CartService) {}
 
   ngOnInit() {}
 
-  //test form
-  /*   onSubmit(form: NgForm) {
-    //console.log('Submitted.');
-    //view form obj
-    console.log(form)
-    //console.log(Object.values(form.value)); //returns an array
-    //form.resetForm({qty:0});
-    form.resetForm({qty:0});
+  /*  //with viewchild
+    addToCart(item: MenuItem) {
+    //console.log(item);
+    //console.log(this.form.value.qty);
+    this.cartService.addToCart(item, this.form.value.qty);
+    window.alert("Item added to cart.");
+    this.form.resetForm({ qty: 0 });
   } */
 
-  addToCart(item: MenuItem, quantity) {
-    this.cartService.addToCart(item, parseInt(quantity));
+  addToCart(form: NgForm, item: MenuItem) {
+    this.cartService.addToCart(item, form.value.qty);
     window.alert("Item added to cart.");
-    this.itemForm.resetForm({ qty: 0 });
+    form.resetForm();
   }
 }

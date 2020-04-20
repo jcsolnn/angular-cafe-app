@@ -12,7 +12,7 @@ import { typeWithParameters } from "@angular/compiler/src/render3/util";
 export class CartItemComponent implements OnInit {
   @Input() cartItem: CartItem;
   @Input() itemIndex: number;
-  @ViewChild("itemForm", { static: false }) itemForm: NgForm;
+  //@ViewChild("itemForm", { static: false }) itemForm: NgForm;
   editMode = false;
 
   constructor(private cartService: CartService) {}
@@ -24,27 +24,12 @@ export class CartItemComponent implements OnInit {
       this.editMode = true;
       form.controls["quantity"].enable();
     }else{
-      // const newQuantity = form.value; // return quantity value for ths item
-      //console.log(form.value.quantity); //form.value returns an object
       this.cartService.updateCartItem(this.itemIndex, form.value.quantity);
       this.editMode = false;
       form.controls["quantity"].disable();
     }
-
-    //update cart and form value
-
-    // console.log(newQuantity);
-    // form.controls['quantity'].setValue(newQuantity);
-    // form.controls['quantity'].disable();
-    // Deletes currnt qty value
-    //this.cartService.updateCartItem(this.itemIndex, newQuantity);
-
   }
   onRemoveItem(){
     this.cartService.removeCartItem(this.itemIndex);
   }
-
-  /*   onUpdateItem(newQuantity: number){
-        this.itemForm.setValue({quantity:newQuantity})
-  } */
 }

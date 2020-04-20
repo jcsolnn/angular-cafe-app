@@ -1,13 +1,12 @@
 <h2>Cart</h2>
 <!-- <p *ngIf="order.quantity == 0; else elseBlock"> -->
 <p *ngIf="cart.quantity < 1; else elseBlock">
-  You have 0 items in your cart.
+  You have <em>0</em> items in your cart.
 </p>
 <ng-template #elseBlock>
-  <p>You have <em >{{ cart.quantity }}</em> item(s) in your cart.</p>
-  <!-- <app-cart-item *ngFor="let item of cart.items" [cartItem]="item"></app-cart-item> -->
+  <p>You have <em>{{ cart.quantity }}</em> item(s) in your cart.</p>
   <app-cart-item *ngFor="let item of cart.items; let i = index" [cartItem]="item" [itemIndex] = "i"></app-cart-item>
-  <!--   <button class="button-clear" (click)="onClearCart()">Clear Cart</button>
-  <button class="button-primary">Place Order</button>
-  -->
+  <p>Total: {{cart.total | currency}}</p>
+  <button class="button-clear" (click)="onClearCart()">Clear Cart</button>
+  <button class="button-primary">Checkout</button>
 </ng-template>
