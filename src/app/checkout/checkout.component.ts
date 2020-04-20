@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ["./checkout.component.css"],
 })
 export class CheckoutComponent implements OnInit {
-  @ViewChild('paymentForm',{static:false}) form:NgForm;
+  @ViewChild('paymentForm') form:NgForm;
 
   constructor() {}
 
