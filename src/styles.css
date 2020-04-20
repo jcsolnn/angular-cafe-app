@@ -5,13 +5,17 @@
 body{
   background: #fff4e9;
   font-size: 18px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   padding: 10px;
 }
 h1, h2{
   color: #9c51b6;
 }
 
+label{
+  color:#6a51b6;
+  font-weight: bold;
+}
 
 .content{
   margin: 20px auto;
@@ -39,7 +43,7 @@ h1, h2{
   color: #fff4e9;
 }
 .button-primary:hover{
-  background-color: #6551b5;
+  background-color: #6a51b6;
 }
 .button-primary:disabled{
   cursor: default;

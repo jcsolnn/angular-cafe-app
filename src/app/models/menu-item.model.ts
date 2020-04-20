@@ -7,4 +7,11 @@ export class MenuItem{
   //description: string;
   price: number;
   //imagePath: string;
+
+  constructor(id:string, categoryId: number, name:string, price:number){
+    this.id = id;
+    this.categoryId = categoryId;
+    this.name = name;
+    this.price =price;
+  }
 }

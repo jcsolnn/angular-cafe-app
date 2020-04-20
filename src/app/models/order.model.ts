@@ -1,4 +1,5 @@
-import { OrderItem } from './order-item.model';
+//TODO: replace with Cart model
+import { CartItem } from './cart-item.model';
 
 export class Order{
   //dateTime: number;
@@ -11,7 +12,7 @@ export class Order{
   totalPrice: number;
   // items pending for this order
   //items: OrderItem[] = [];
-  items: OrderItem[];
+  items: CartItem[];
 
   constructor(quantity: number, totalPrice: number){
     this.quantity = quantity;

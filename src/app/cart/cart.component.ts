@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { OrderItem } from '../models/order-item.model';
-//import { Order } from '../models/order.model';
+import { CartItem } from '../models/cart-item.model';
+import { Cart } from '../models/cart.model';
+
 
 @Component({
   selector: "app-cart",
@@ -9,35 +10,26 @@ import { OrderItem } from '../models/order-item.model';
   styleUrls: ["./cart.component.css"],
 })
 export class CartComponent implements OnInit {
-  //order: Order;
-  cartItems: OrderItem[] = [
-    {id: "A1", name: "menu item 1",unitPrice: 3.5, quantity: 1, totalPrice: 3.5},
-    {id: "B2", name: "menu item 2",unitPrice: 3.5, quantity: 1, totalPrice: 3.5},
-    {id: "C3", name: "menu item 3",unitPrice: 3.5, quantity: 1, totalPrice: 3.5},
-    {id: "D4", name: "menu item 4",unitPrice: 3.5, quantity: 1, totalPrice: 3.5},
+  cart: Cart;
 
-  ]
   constructor(private cartService: CartService) {}
 
   ngOnInit(){
-    //this.getItems();
-    return this.cartItems;
+    this.getCart();
+    //subscribe to cart items change, may not need though
+/*     this.cartService.itemsChanged
+    .subscribe(
+      (items: CartItem[])=>{
+        this.cart.items = items;
+      }
+    ); */
   }
 
-/*   getItems(): void{
-    this.cartItems = this.cartService.getItems();
-  } */
-
-
-/*   ngOnInit() {
-    //this.orderItems = this.cartService.getItems();
-    this.getOrder();
+  getCart(){
+    this.cart = this.cartService.getCart();
   }
 
-  getOrder() {
-    this.order = this.cartService.getOrder();
-  }
   onClearCart(): void {
     this.cartService.clearCart();
-  }*/
+  }
 }

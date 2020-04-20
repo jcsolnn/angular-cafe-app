@@ -26,6 +26,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cafe-app app is running!');
+    expect(compiled.querySelector('.content label').textContent).toContain('cafe-app app is running!');
   });
 });

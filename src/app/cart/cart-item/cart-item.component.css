@@ -27,7 +27,14 @@ td{
 input {
   border: none;
   border-radius: 5px;
+  font-size: large;
   padding: 10px;
   margin: 5px;
   text-align: center;
+}
+
+input:disabled{
+  /*background-color: #f4d3b2;*/
+  background-color: inherit;
+  font-weight: bolder;
 }

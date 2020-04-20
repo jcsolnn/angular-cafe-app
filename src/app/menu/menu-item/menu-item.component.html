@@ -1,8 +1,8 @@
 <div class="row">
-  <form #itemForm="ngForm" >
+  <form #menuItemForm="ngForm" (ngSubmit)="addToCart(menuItemForm, item)" >
     <table>
       <tr>
-        <td><span style="color:#6551b5">{{ item.id }}.</span> {{item.name}}</td>
+        <td><label>{{ item.id }}.</label> {{item.name}}</td>
         <td>{{ item.price|currency }}</td>
         <td>
           <input
@@ -12,7 +12,8 @@
             min="0"
             max="24"
             required
-            [ngModel]="0"
+            placeholder="0"
+            ngModel
             #qty>
         </td>
         <td>
@@ -21,8 +22,7 @@
             class="button-primary"
             style="float: right;"
             type="submit"
-            [disabled]="qty.value == 0"
-            (click)="addToCart(item, qty.value)">
+            [disabled]="qty.value == 0">
             Add to Cart
           </button>
         </td>
