@@ -4,9 +4,9 @@
   You have <em>0</em> items in your cart.
 </p>
 <ng-template #elseBlock>
-  <p>You have <em>{{ cart.quantity }}</em> item(s) in your cart.</p>
+  <p>You have <em>{{ cart.quantity }}</em> item<span [hidden]="cart.quantity < 2">s</span> in your cart.</p>
   <app-cart-item *ngFor="let item of cart.items; let i = index" [cartItem]="item" [itemIndex] = "i"></app-cart-item>
   <p>Total: {{cart.total | currency}}</p>
-  <button class="button-clear" (click)="onClearCart()">Clear Cart</button>
-  <button class="button-primary">Checkout</button>
+  <button class="button-secondary" (click)="onClearCart()">Clear Cart</button>
+  <button class="button-primary" routerLink="/checkout">Checkout</button>
 </ng-template>

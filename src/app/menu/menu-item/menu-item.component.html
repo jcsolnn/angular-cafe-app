@@ -2,7 +2,7 @@
   <form #menuItemForm="ngForm" (ngSubmit)="addToCart(menuItemForm, item)" >
     <table>
       <tr>
-        <td><label>{{ item.id }}.</label> {{item.name}}</td>
+        <td><span style="color: #6a51b6; font-weight: bold;">{{ item.id }}.</span> {{item.name}}</td>
         <td>{{ item.price|currency }}</td>
         <td>
           <input

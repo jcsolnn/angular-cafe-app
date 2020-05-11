@@ -29,7 +29,11 @@ export class CartComponent implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
-  onClearCart(): void {
+  onClearCart() {
     this.cartService.clearCart();
   }
+
+/*   onCheckout(){
+
+  } */
 }

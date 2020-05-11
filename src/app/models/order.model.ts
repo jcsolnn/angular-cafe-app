@@ -1,22 +1,23 @@
-//TODO: replace with Cart model
-import { CartItem } from './cart-item.model';
+import { Cart } from "./cart.model";
+import { CartItem } from "./cart-item.model";
 
-export class Order{
+export class Order {
   //dateTime: number;
   //orderNo: number;
-  // Number of itmes in this order
+  items: CartItem[];
   quantity: number;
   readonly SALES_TAX: number = 0.0625;
+  //price before taxes
+  subtotal: number;
   tax: number;
-  // Total price of this order, including sales tax
-  totalPrice: number;
-  // items pending for this order
-  //items: OrderItem[] = [];
-  items: CartItem[];
+  //price of this order, including tax
+  total: number;
 
-  constructor(quantity: number, totalPrice: number){
-    this.quantity = quantity;
-    this.totalPrice = totalPrice;
-    this.items = [];
+  constructor(cart: Cart) {
+    this.items = cart.items;
+    this.quantity = cart.quantity;
+    this.subtotal = cart.total;
+    this.tax = this.subtotal * this.SALES_TAX;
+    this.total = this.subtotal + this.tax;
   }
 }
