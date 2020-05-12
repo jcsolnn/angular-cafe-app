@@ -14,6 +14,8 @@ import { DropdownDirective } from "./directives/dropdown.directive";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { MenuItemComponent } from "./menu/menu-item/menu-item.component";
 import { CartItemComponent } from "./cart/cart-item/cart-item.component";
+import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
+import { PaymentInfoComponent } from './checkout/payment-info/payment-info.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { CartItemComponent } from "./cart/cart-item/cart-item.component";
     CheckoutComponent,
     MenuItemComponent,
     CartItemComponent,
+    OrderSummaryComponent,
+    PaymentInfoComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],

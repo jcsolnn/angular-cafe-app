@@ -1,0 +1,38 @@
+<h2>Order Summary</h2>
+<div *ngIf="order; else orderError">
+  <p
+    *ngIf="order.quantity == 0; else orderPending"
+    style="background-color: inherit;"
+  >
+    You have no items in your cart.
+  </p>
+  <ng-template #orderPending>
+    <table>
+      <tr *ngFor="let item of order.items">
+        <td>{{ item.id }}. {{ item.name }}</td>
+        <td>x {{ item.quantity }}</td>
+        <td>{{ item.subtotal | currency }}</td>
+      </tr>
+      <tr style="border-top: 1px solid #c67575;">
+        <td></td>
+        <td>Subtotal</td>
+        <td style="text-align: right;">{{ order.subtotal | currency }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Tax</td>
+        <td style="text-align: right;">{{ order.tax | currency }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>TOTAL</b> ({{ order.quantity }} items)</td>
+        <td style="text-align: right;">
+          <b>{{ order.total | currency }}</b>
+        </td>
+      </tr>
+    </table>
+  </ng-template>
+</div>
+<ng-template #orderError>
+  <p>Oops! Something went wrong!</p>
+</ng-template>

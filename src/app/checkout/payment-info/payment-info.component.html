@@ -1,0 +1,45 @@
+<h2>Payment Information</h2>
+<div id="payment-info">
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" required size="30" />
+    <!--  <div *ngIf="name.invalid && (name.dirty || name.touched)">
+          <p *ngIf="name.errors.required"> Name is required.</p>
+        </div> -->
+    <label for="zipcode">Zip Code</label>
+    <input
+      id="zipcode"
+      type="text"
+      formControlName="zipcode"
+      required
+      size="5"
+    />
+    <!--<div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)">
+          <p *ngIf="zipcode.errors.required"> Zip Code invalid.</p>
+          *<p *ngIf="zipcode.errors.pattern"> Zip Code invalid.</p>
+        </div>-->
+    <label for="ccNumber">Credit Card</label>
+    <input
+      id="ccNumber"
+      type="text"
+      formControlName="ccNumber"
+      required
+      size="19"
+    />
+    <label for="ccCode">CC Secutiry Code</label>
+    <input id="ccCode" type="text" formControlName="ccCode" required size="3" />
+    <button class="button-secondary">
+      Cancel
+    </button>
+    <button
+      type="submit"
+      class="button-primary"
+      [disabled]="!paymentForm.valid"
+    >
+      Place Order
+    </button>
+    <p *ngIf="!paymentForm.valid && (paymentForm.dirty || paymentForm.touched)">
+      All fields required.
+    </p>
+  </form>
+</div>
