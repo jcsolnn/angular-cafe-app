@@ -2,7 +2,7 @@
 <div id="payment-info">
   <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
     <label for="name">Name</label>
-    <input id="name" type="text" formControlName="name" required size="30" />
+    <input id="name" type="text" formControlName="name" size="30" required />
     <!--  <div *ngIf="name.invalid && (name.dirty || name.touched)">
           <p *ngIf="name.errors.required"> Name is required.</p>
         </div> -->
@@ -28,9 +28,7 @@
     />
     <label for="ccCode">CC Secutiry Code</label>
     <input id="ccCode" type="text" formControlName="ccCode" required size="3" />
-    <button class="button-secondary">
-      Cancel
-    </button>
+    <button class="button-secondary">Cancel</button>
     <button
       type="submit"
       class="button-primary"
